@@ -13,7 +13,7 @@ export function App() {
   async function fetchPopulars() {
     const popularTVShows = await TVShowAPI.fetchPopulars();
     if (popularTVShows.length > 0) {
-      setcurrentTVShow(popularTVShows[13]);
+      setcurrentTVShow(popularTVShows[0]);
     }
   }
 
@@ -34,7 +34,10 @@ export function App() {
     }
   }, [currentTVShow]);
 
-  console.log(recommendedTVShows);
+ function handleTVShowClick(tvShow) {
+    setcurrentTVShow(tvShow);
+  }
+
 
   return (
     <div
@@ -62,7 +65,7 @@ export function App() {
         {currentTVShow && <TVShowDetail tvShow={currentTVShow} />}
       </div>
       <div className={style.recommended_shows}>
-        {currentTVShow && <TVShowList tvShowList={recommendedTVShows} />}
+        {currentTVShow && <TVShowList onClickItem={handleTVShowClick} tvShowList={recommendedTVShows} />}
       </div>
     </div>
   );
