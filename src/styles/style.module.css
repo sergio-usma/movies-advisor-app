@@ -17,3 +17,14 @@
 .recommended_shows {
   flex: 2;
 }
+
+.logo_container {
+  display: flex;
+  margin: auto;
+}
+
+.logoImg {
+  width: 70px;
+  object-fit: contain;
+  cursor: pointer;
+}
