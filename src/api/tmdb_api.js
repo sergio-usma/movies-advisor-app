@@ -1,9 +1,6 @@
 import axios from 'axios';
+import { BASE_URL, CATEGORY, SUB_CATEGORY, API_KEY } from './api_config.js';
 
-const BASE_URL = 'https://api.themoviedb.org/3';
-const CATEGORY = '/tv';
-const SUB_CATEGORY = '/popular';
-const API_KEY = '?api_key=4309a1a8fbc043e11ef87aa7e5c90093';
 export class TVShowAPI {
   static async fetchPopulars() {
     const response = await axios.get(`${BASE_URL}${CATEGORY}${SUB_CATEGORY}${API_KEY}`);
