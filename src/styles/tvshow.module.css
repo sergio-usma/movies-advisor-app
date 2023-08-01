@@ -6,13 +6,12 @@
 .rating_container {
   display: flex;
 }
+
 .rating {
   margin-top: 3px;
   margin-left: 5px;
 }
-.overview:hover {
-  overflow-y: auto;
-}
+
 .overview {
   font-family: Roboto, sans-serif;
   font-weight: 400;
@@ -20,4 +19,8 @@
   height: 120px;
   overflow-y: hidden;
   margin-top: 10px;
+}
+
+.overview:hover {
+  overflow-y: auto;
 }
