@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { TVShowAPI } from './api/tmdb_api.js';
 import { BACKDROP_URL } from './api/api_config.js';
 import { TVShowDetail } from './components/TVShow.jsx';
+import Logo from './assets/tv_logo.png';
 export function App() {
   const [currentTVShow, setcurrentTVShow] = useState();
 
@@ -32,8 +33,9 @@ export function App() {
       <div className={style.header}>
         <div className="row">
           <div className="col-4">
-            <div>Logo here</div>
-            <div>subtitle</div>
+            <div className={style.logo_container}>
+              <img className={style.logoImg} src={Logo} alt="Logo NinjaTV" />
+            </div>
           </div>
           <div className="col-md-12 col-lg-4">
             <input style={{ width: '100%' }} type="text" />
