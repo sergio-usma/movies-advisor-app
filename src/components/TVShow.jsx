@@ -8,7 +8,7 @@ export function TVShowDetail({ tvShow }) {
       <div className={style.title}>{tvShow.name}</div>
       <div className={style.rating_container}>
         <FiveStarRating rating={rating} />
-        <span className={style.rating}>{rating}/5</span>
+        <span className={style.rating}>{(rating).toFixed(1)}/5</span>
       </div>
       <div className={style.overview}>{tvShow.overview}</div>
     </div>
