@@ -25,7 +25,7 @@ export function App() {
     try {
       const popularTVShowList = await TVShowAPI.fetchPopulars();
       if (popularTVShowList.length > 0) {
-        setCurrentTVShow(popularTVShowList[0]);
+        setCurrentTVShow(popularTVShowList[6]);
       }
     } catch (error) {
       alert('Something went wrong when fetching the popular tv shows');
