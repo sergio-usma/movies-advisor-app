@@ -1,5 +1,22 @@
 import style from './styles/style.module.css';
+import { useState, useEffect } from 'react';
+import { TVShowAPI } from './api/tmdb_api.js';
 export function App() {
+  const [currentTVShow, setcurrentTVShow] = useState();
+
+  async function fetchPopulars() {
+    const popularTVShows = await TVShowAPI.fetchPopulars();
+    if (popularTVShows.length > 0) {
+      setcurrentTVShow(popularTVShows[0]);
+    }
+  }
+
+  useEffect(() => {
+    fetchPopulars();
+  }, []);
+
+  console.log(currentTVShow);
+
   return (
     <div className={style.main_container}>
       <div className={style.header}>
